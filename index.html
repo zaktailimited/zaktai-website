@@ -27,10 +27,36 @@
     </script>
   </head>
   <body>
+    <!-- NAVIGATION BAR -->
+    <header>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="#">
+            <img src="assets/logo.png" alt="Zaktai Logo" />
+            <h1>Zaktai</h1>
+          </a>
+        </div>
+        <nav>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About Us</a></li>
+          </ul>
+          <div class="burger" id="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+            <div class="line4"></div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
     <!-- HERO SECTION -->
-    <section id="hero">
-      <div class="container">
-        <h1>Let AI Handle It</h1>
+    <section id="hero" class="home">
+      <div class="hero-content">
+        <h1>Zaktai - Let AI Handle It</h1>
         <p>
           We help businesses automate workflows, boost efficiency, and scale effortlessly using intelligent solutions
           tailored to your needs.
@@ -136,5 +162,14 @@
         </div>
       </div>
     </footer>
+    <script>
+      const burger = document.getElementById("burger");
+      const navLinks = document.getElementById("navLinks");
+
+      burger.addEventListener("click", () => {
+        navLinks.classList.toggle("nav-active");
+        burger.classList.toggle("toggle");
+      });
+    </script>
   </body>
 </html>

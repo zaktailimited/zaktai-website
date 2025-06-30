@@ -9,27 +9,100 @@ body {
   background-color: #0a0a0a;
   color: #f4f4f4;
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
 a {
   text-decoration: none;
   color: #00ffff;
 }
+img {
+  max-height: 40px;
+}
 .container {
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   padding: 2rem;
 }
-h1,
-h2,
-h3 {
-  margin-bottom: 1rem;
+textarea {
+  resize: none;
+}
+
+/* Header + Nav */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #0a0a0a;
+  border-bottom: 1px solid #222;
+  z-index: 1000;
+}
+.nav-container .logo a {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+.nav-container .logo a img {
+  padding-right: 20px;
+}
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.nav-links li a {
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-links li a:hover {
+  color: #00ffff;
+}
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+.burger div {
+  width: 25px;
+  height: 3px;
+  background: #00ffff;
+  transition: all 0.3s ease;
+}
+
+/* Toggle Anim */
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
 }
 
 /* Hero */
 #hero {
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  padding: 6rem 2rem;
+  height: 100vh;
+  background: linear-gradient(160deg, #1f1f1f, #0a0a0a 80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  padding: 6rem 2rem 2rem;
+}
+.hero-content {
+  max-width: 800px;
+  margin: auto;
 }
 #hero h1 {
   font-size: 3rem;
@@ -52,11 +125,38 @@ h3 {
   background: #00cccc;
 }
 
-/* Services */
-#services h2 {
+/* Sections */
+/* --- Section Background Alternation --- */
+#services {
+  background: #0e0e0e; /* slightly lighter than base */
+}
+#pricing {
+  background: #151515; /* darker for contrast */
+}
+#about {
+  background: #0e0e0e;
+}
+#contact {
+  background: #151515;
+}
+#pricing {
+  background: linear-gradient(to bottom, #111, #0a0a0a);
+}
+
+/* --- Optional: subtle section divider --- */
+section {
+  border-bottom: 1px solid #1f1f1f;
+  padding: 4rem 2rem;
+}
+#services h2,
+#pricing h2,
+#about h2,
+#contact h2 {
   text-align: center;
   margin-bottom: 2rem;
 }
+
+/* Cards */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -68,16 +168,13 @@ h3 {
   border-radius: 10px;
   border: 1px solid #333;
   transition: transform 0.3s;
+  min-height: 300px; /* New line added */
 }
 .card:hover {
   transform: translateY(-5px);
 }
 
 /* Pricing */
-#pricing h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-}
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -89,6 +186,7 @@ h3 {
   border: 1px solid #333;
   border-radius: 10px;
   text-align: center;
+  min-height: 350px;
 }
 .pricing-card.popular {
   border: 2px solid #00ffff;
@@ -108,28 +206,7 @@ h3 {
   margin: 0.5rem 0;
 }
 
-/* About */
-#about {
-  padding: 4rem 2rem;
-  background: #141414;
-  text-align: center;
-}
-
-/* Footer */
-footer {
-  background: #000;
-  padding: 1.5rem 2rem;
-  text-align: center;
-  font-size: 0.9rem;
-}
-footer a {
-  color: #00ffff;
-}
-#contact {
-  padding: 4rem 2rem;
-  background: #0f0f0f;
-  text-align: center;
-}
+/* Contact */
 form {
   max-width: 600px;
   margin: auto;
@@ -154,4 +231,40 @@ form button {
   font-weight: bold;
   cursor: pointer;
   color: #000;
+}
+
+/* Footer */
+footer {
+  background: #000;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+footer a {
+  color: #00ffff;
+}
+footer .socials {
+  margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    right: 0;
+    top: 65px;
+    background: #0a0a0a;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    gap: 1rem;
+    display: none;
+  }
+  .nav-links.nav-active {
+    display: flex;
+  }
+  .burger {
+    display: flex;
+  }
 }
