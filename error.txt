@@ -1,2 +1,0 @@
-Build Failed
-The `vercel.json` schema validation failed with the following message: `build` should NOT have additional property `outputDirectory`
