@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prebuild": "npx update-browserslist-db@latest",
     "build:html": "npx posthtml ./src/*.html -o ./dist -c posthtml.config.js",
-    "build:css": "tailwindcss -i ./src/css/input.css -o ./dist/css/output.css --minify",
+    "build:css": "npx tailwindcss -i ./src/css/input.css -o ./dist/css/output.css --minify",
     "build": "npm run build:css && npm run build:html",
     "start:services": "start dist/services.html"
   },
@@ -14,6 +15,8 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.19",
+    "browserslist": "^4.25.1",
+    "caniuse-lite": "^1.0.30001726",
     "postcss": "^8.4.38",
     "posthtml-cli": "^0.10.0",
     "posthtml-include": "^2.0.1",
