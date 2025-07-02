@@ -8,7 +8,7 @@
     "build:css": "tailwindcss -i ./src/css/input.css -o ./dist/css/output.css --minify",
     "build": "npm run build:css && npm run build:html",
     "start:services": "start dist/services.html",
-    "postinstall": "chmod +x node_modules/.bin/tailwindcss"
+    "postinstall": "chmod +x node_modules/.bin/tailwindcss && chmod +x node_modules/.bin/posthtml"
   },
   "keywords": [],
   "author": "",
