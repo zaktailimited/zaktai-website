@@ -7,7 +7,9 @@
     "build:html": "posthtml ./src/*.html -o ./dist -c posthtml.config.js",
     "build:css": "tailwindcss -i ./src/css/input.css -o ./dist/css/output.css --minify",
     "build": "npm run build:css && npm run build:html",
-    "start:services": "start dist/services.html"  },
+    "start:services": "start dist/services.html",
+    "postinstall": "chmod +x node_modules/.bin/tailwindcss"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
