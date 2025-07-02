@@ -4,11 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:html": "posthtml ./src/*.html -o ./dist -c posthtml.config.js",
+    "build:html": "npx posthtml ./src/*.html -o ./dist -c posthtml.config.js",
     "build:css": "tailwindcss -i ./src/css/input.css -o ./dist/css/output.css --minify",
     "build": "npm run build:css && npm run build:html",
-    "start:services": "start dist/services.html",
-    "postinstall": "chmod +x node_modules/.bin/tailwindcss && chmod +x node_modules/.bin/posthtml"
+    "start:services": "start dist/services.html"
   },
   "keywords": [],
   "author": "",

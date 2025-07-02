@@ -1,41 +1,41 @@
-[21:49:37.027] Running build in Washington, D.C., USA (East) – iad1
-[21:49:37.038] Build machine configuration: 2 cores, 8 GB
-[21:49:37.109] Cloning github.com/zaktailimited/zaktai-website (Branch: main, Commit: 0e0f4cc)
-[21:49:39.042] Cloning completed: 1.930s
-[21:49:39.911] Restored build cache from previous deployment (6GV62Tt5ukFpMMwCoXQKZPd4YAbr)
-[21:49:40.215] Running "vercel build"
-[21:49:40.656] Vercel CLI 43.3.0
-[21:49:41.314] Installing dependencies...
-[21:49:42.738] 
-[21:49:42.739] > zaktai-website@1.0.0 postinstall
-[21:49:42.740] > chmod +x node_modules/.bin/tailwindcss
-[21:49:42.740] 
-[21:49:42.754] 
-[21:49:42.754] up to date in 1s
-[21:49:42.755] 
-[21:49:42.755] 63 packages are looking for funding
-[21:49:42.755]   run `npm fund` for details
-[21:49:42.786] Running "npm run build"
-[21:49:42.900] 
-[21:49:42.901] > zaktai-website@1.0.0 build
-[21:49:42.901] > npm run build:css && npm run build:html
-[21:49:42.902] 
-[21:49:43.014] 
-[21:49:43.016] > zaktai-website@1.0.0 build:css
-[21:49:43.016] > tailwindcss -i ./src/css/input.css -o ./dist/css/output.css --minify
-[21:49:43.017] 
-[21:49:43.448] Browserslist: caniuse-lite is outdated. Please run:
-[21:49:43.448]   npx update-browserslist-db@latest
-[21:49:43.449]   Why you should do it regularly: https://github.com/browserslist/update-db#readme
-[21:49:43.575] 
-[21:49:43.575] Rebuilding...
-[21:49:43.941] 
-[21:49:43.942] Done in 416ms.
-[21:49:44.074] 
-[21:49:44.075] > zaktai-website@1.0.0 build:html
-[21:49:44.075] > posthtml ./src/*.html -o ./dist -c posthtml.config.js
-[21:49:44.076] 
-[21:49:44.079] sh: line 1: /vercel/path0/node_modules/.bin/posthtml: Permission denied
-[21:49:44.094] Error: Command "npm run build" exited with 126
-[21:49:44.217] 
-[21:49:46.930] Exiting build container
+[21:52:36.196] Running build in Washington, D.C., USA (East) – iad1
+[21:52:36.197] Build machine configuration: 2 cores, 8 GB
+[21:52:36.228] Cloning github.com/zaktailimited/zaktai-website (Branch: main, Commit: 0e0f4cc)
+[21:52:36.252] Skipping build cache, deployment was triggered without cache.
+[21:52:38.024] Cloning completed: 1.796s
+[21:52:39.108] Running "vercel build"
+[21:52:39.556] Vercel CLI 43.3.0
+[21:52:40.130] Installing dependencies...
+[21:52:41.304] 
+[21:52:41.305] > zaktai-website@1.0.0 postinstall
+[21:52:41.305] > chmod +x node_modules/.bin/tailwindcss
+[21:52:41.305] 
+[21:52:41.318] 
+[21:52:41.319] up to date in 954ms
+[21:52:41.319] 
+[21:52:41.319] 63 packages are looking for funding
+[21:52:41.319]   run `npm fund` for details
+[21:52:41.351] Running "npm run build"
+[21:52:41.461] 
+[21:52:41.461] > zaktai-website@1.0.0 build
+[21:52:41.462] > npm run build:css && npm run build:html
+[21:52:41.462] 
+[21:52:41.573] 
+[21:52:41.573] > zaktai-website@1.0.0 build:css
+[21:52:41.573] > tailwindcss -i ./src/css/input.css -o ./dist/css/output.css --minify
+[21:52:41.573] 
+[21:52:42.001] Browserslist: caniuse-lite is outdated. Please run:
+[21:52:42.002]   npx update-browserslist-db@latest
+[21:52:42.003]   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+[21:52:42.123] 
+[21:52:42.124] Rebuilding...
+[21:52:42.486] 
+[21:52:42.488] Done in 412ms.
+[21:52:42.613] 
+[21:52:42.614] > zaktai-website@1.0.0 build:html
+[21:52:42.614] > posthtml ./src/*.html -o ./dist -c posthtml.config.js
+[21:52:42.614] 
+[21:52:42.618] sh: line 1: /vercel/path0/node_modules/.bin/posthtml: Permission denied
+[21:52:42.633] Error: Command "npm run build" exited with 126
+[21:52:42.737] 
+[21:52:45.713] Exiting build container
