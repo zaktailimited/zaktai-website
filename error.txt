@@ -1,26 +1,22 @@
-[21:55:26.315] Running build in Washington, D.C., USA (East) – iad1
-[21:55:26.316] Build machine configuration: 2 cores, 8 GB
-[21:55:26.331] Cloning github.com/zaktailimited/zaktai-website (Branch: main, Commit: dd358ba)
-[21:55:27.090] Cloning completed: 758.000ms
-[21:55:27.638] Restored build cache from previous deployment (6GV62Tt5ukFpMMwCoXQKZPd4YAbr)
-[21:55:27.984] Running "vercel build"
-[21:55:28.423] Vercel CLI 43.3.0
-[21:55:30.486] Installing dependencies...
-[21:55:32.082] 
-[21:55:32.082] up to date in 955ms
-[21:55:32.083] 
-[21:55:32.083] 63 packages are looking for funding
-[21:55:32.084]   run `npm fund` for details
-[21:55:32.115] Running "npm run build"
-[21:55:32.228] 
-[21:55:32.228] > zaktai-website@1.0.0 build
-[21:55:32.228] > npm run build:css && npm run build:html
-[21:55:32.229] 
-[21:55:32.350] 
-[21:55:32.350] > zaktai-website@1.0.0 build:css
-[21:55:32.350] > tailwindcss -i ./src/css/input.css -o ./dist/css/output.css --minify
-[21:55:32.350] 
-[21:55:32.359] sh: line 1: /vercel/path0/node_modules/.bin/tailwindcss: Permission denied
-[21:55:32.382] Error: Command "npm run build" exited with 126
-[21:55:32.502] 
-[21:55:35.234] Exiting build container
+[22:05:23.347] Running build in Washington, D.C., USA (East) – iad1
+[22:05:23.347] Build machine configuration: 2 cores, 8 GB
+[22:05:23.378] Cloning github.com/zaktailimited/zaktai-website (Branch: main, Commit: 64591a7)
+[22:05:24.110] Cloning completed: 732.000ms
+[22:05:24.748] Restored build cache from previous deployment (6GV62Tt5ukFpMMwCoXQKZPd4YAbr)
+[22:05:25.649] Running "vercel build"
+[22:05:26.087] Vercel CLI 43.3.0
+[22:05:26.773] Installing dependencies...
+[22:05:27.990] 
+[22:05:27.991] up to date in 972ms
+[22:05:27.991] 
+[22:05:27.992] 63 packages are looking for funding
+[22:05:27.992]   run `npm fund` for details
+[22:05:28.022] Running "npm run build"
+[22:05:28.133] 
+[22:05:28.133] > zaktai-website@1.0.0 prebuild
+[22:05:28.133] > npx update-browserslist-db@latest
+[22:05:28.133] 
+[22:05:28.588] sh: line 1: /vercel/path0/node_modules/.bin/update-browserslist-db: Permission denied
+[22:05:28.606] Error: Command "npm run build" exited with 126
+[22:05:28.938] 
+[22:05:31.800] Exiting build container

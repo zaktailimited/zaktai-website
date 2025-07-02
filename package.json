@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prebuild": "npx update-browserslist-db@latest",
+    "postinstall": "chmod +x node_modules/.bin/tailwindcss && chmod +x node_modules/.bin/posthtml && chmod +x node_modules/.bin/update-browserslist-db",
     "build:html": "npx posthtml ./src/*.html -o ./dist -c posthtml.config.js",
     "build:css": "npx tailwindcss -i ./src/css/input.css -o ./dist/css/output.css --minify",
     "build": "npm run build:css && npm run build:html",
