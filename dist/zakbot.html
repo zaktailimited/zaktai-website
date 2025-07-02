@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakbot</title>
+    <link rel="stylesheet" href="css/output.css">
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans flex items-center justify-center h-screen">
+    <div class="w-full max-w-lg bg-gray-800 rounded-lg shadow-lg p-6">
+        <div id="chatbox" class="h-80 overflow-y-auto bg-gray-700 rounded-md p-4 space-y-4 mb-4">
+            <!-- Messages will be added here -->
+        </div>
+        <form id="zakbot-form" class="flex gap-2">
+            <input type="text" id="user-input" placeholder="Ask something..." required="" class="flex-grow p-3 bg-gray-700 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-400">
+            <button type="submit" class="bg-cyan-400 text-black py-3 px-6 rounded-md font-bold hover:bg-cyan-300 transition">Send</button>
+        </form>
+    </div>
+
+    <script>
+      const form = document.getElementById("zakbot-form");
+      const input = document.getElementById("user-input");
+      const chatbox = document.getElementById("chatbox");
+
+      function addMessage(sender, text) {
+        const msg = document.createElement("div");
+        msg.classList.add("p-3", "rounded-lg", "max-w-xs");
+        if (sender === 'user') {
+            msg.classList.add("bg-cyan-800", "self-end", "ml-auto");
+        } else {
+            msg.classList.add("bg-gray-600", "self-start", "mr-auto");
+        }
+        msg.textContent = text;
+        chatbox.appendChild(msg);
+        chatbox.scrollTop = chatbox.scrollHeight;
+      }
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const userText = input.value.trim();
+        if (!userText) return;
+        addMessage("user", userText);
+        input.value = "";
+
+        try {
+          const res = await fetch("https://final-chatbot-982a.onrender.com/api/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: userText }),
+          });
+          const data = await res.json();
+          addMessage("zakbot", data.reply || "Sorry, I couldn’t understand that.");
+        } catch {
+          addMessage("zakbot", "Error connecting to Zakbot.");
+        }
+      });
+    </script>
+</body>
+</html>

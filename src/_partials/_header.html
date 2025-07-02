@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="css/output.css">
+    <script src="https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+    <!-- NAVIGATION BAR -->
+    <header class="bg-black fixed w-full top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <div class="logo">
+                <a href="index.html" class="flex items-center gap-4 text-white">
+                    <img src="assets/logo.png" alt="Zaktomate Logo" class="h-10">
+                    <h1 class="text-xl font-bold">Zaktomate</h1>
+                </a>
+            </div>
+            <nav>
+                <ul class="hidden md:flex space-x-8" id="navLinks">
+                    <li><a href="index.html#services" class="hover:text-cyan-400">Services</a></li>
+                    <li><a href="opsmate.html#plans" class="hover:text-cyan-400">Pricing</a></li>
+                    <li><a href="index.html#contact" class="hover:text-cyan-400">Contact</a></li>
+                    <li><a href="index.html#about" class="hover:text-cyan-400">About Us</a></li>
+                </ul>
+                <div class="md:hidden cursor-pointer" id="burger">
+                    <div class="w-6 h-0.5 bg-cyan-400 mb-1.5"></div>
+                    <div class="w-6 h-0.5 bg-cyan-400 mb-1.5"></div>
+                    <div class="w-6 h-0.5 bg-cyan-400"></div>
+                </div>
+            </nav>
+        </div>
+    </header>

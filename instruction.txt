@@ -1,0 +1,196 @@
+Services Page Structure Overview:
+
+
+1. Page Title & Intro Section (Top of Page)
+
+
+Heading: Zaktomate – AI-Powered Business Automation Services
+
+
+Subheading: From chatbots to automations, Zaktomate helps you scale smarter with AI.
+
+
+Note Block (visually distinct):
+
+
+ ✅ Currently Live: Zakdeck & Zakbot
+
+
+🛠️ Other services available on demand (custom delivery timelines apply)
+
+
+2. Services Catalogue Section (Core Grid or Cards Layout)
+
+
+Use a two-category structure:
+
+
+“✅ Live Now”
+
+
+“🛠️ On Demand”
+
+
+✅ Live Now
+
+
+Zakdeck – AI Slide & Content Engine
+
+
+Turn outlines, textbook photos, or lecture notes into ready-to-use presentation decks.
+
+
+Use Cases: Lesson plans, pitch decks, workshop slides
+
+
+Status Tag: ✅ Live Now
+
+
+Zakbot – AI Chatbot for Customer Engagement
+
+
+Deploy your AI chatbot to answer queries, generate leads, and provide support.
+
+
+Channels: Website, Messenger, WhatsApp
+
+
+Use Cases: Student helpdesk, lead generation, product support
+
+
+Status Tag: ✅ Live Now
+
+
+🛠️ On Demand Services
+
+
+Display the remaining services as “Request-Based” with an icon or tag showing 🛠️ or ⏳ to indicate “not fully live yet.”
+
+
+AI Exam Typing & Formatting
+
+
+Convert handwritten or image-based questions into clean MCQs or exams
+
+
+Formats: Google Docs, Word, PDF
+
+
+Use Cases: Mock exams, past papers, daily assessments
+
+
+Status Tag: 🛠️ On Demand
+
+
+AI Blog & Content Writing
+
+
+Generate SEO blogs, FAQs, and copy in your custom tone
+
+
+Use Cases: Institutional blogs, promo content
+
+
+Status Tag: 🛠️ On Demand
+
+
+Workflow Automation & Custom Integrations
+
+
+Automate admin tasks and integrate with Google Workspace, Zapier, Notion
+
+
+Use Cases: Attendance, lead routing, LMS triggers
+
+
+Status Tag: 🛠️ On Demand
+
+
+AI Social Media Content Packs
+
+
+Monthly bundles of captions, carousel ideas, and visuals
+
+
+Platforms: Facebook, Instagram, LinkedIn
+
+
+Use Cases: Daily academic engagement
+
+
+Status Tag: 🛠️ On Demand
+
+
+Lecture Notes & Summaries Generator
+
+
+Convert full lectures into organized, summarized handouts
+
+
+Use Cases: Course materials, revisions
+
+
+Status Tag: 🛠️ On Demand
+
+
+Standard Operating Procedures (SOPs)
+
+
+Convert team workflows into actionable AI SOPs
+
+
+Use Cases: Training manuals, operations guides
+
+
+Status Tag: 🛠️ On Demand
+
+
+Lead Generation Messaging & Funnels
+
+
+AI-personalized outreach campaigns for WhatsApp, LinkedIn, etc.
+
+
+Use Cases: B2C sales, student recruitment
+
+
+Status Tag: 🛠️ On Demand
+
+
+3. Access Instructions Section (Fixed Footer or Callout Panel)
+
+
+ 🧭 How to Use These Services
+
+
+All services are bundled under the Zaktomate Co-Pilot Program based on the selected tier:
+
+
+Plan | Who It’s For| Price
+
+
+Ignite Small ops / pilots BDT 5,000/month
+
+
+Accelerate Scaling companies BDT 10,000/month
+
+
+Transform Full automation setups BDT 15,000/month
+
+
+Also include:
+
+
+A link to the Zaktomate Co-Pilot Page
+
+
+A button to Book a Free AI Audit Session (CTA)
+
+
+Notes:
+
+
+Clearly tag each service with either Live or On Demand.
+
+
+Ensure non-live services do not have a “Get Started Now” button but instead use “Request Access” or “Book a Call.”
