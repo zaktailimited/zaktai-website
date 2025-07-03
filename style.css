@@ -1,0 +1,465 @@
+/* Basic Resets */
+:root {
+    --primary-color: #28a745; /* Greenish hue */
+    --primary-dark-color: #218838; /* Darker greenish hue */
+    --text-color-light: #f0f0f0; /* Light text for dark background */
+    --text-color-dark: #333; /* Dark text for light background */
+    --background-color-light: #1a1a1a; /* Dark background as default */
+    --background-color-dark: #fff; /* Light background for light mode */
+    --card-background-light: #2a2a2a; /* Dark card background */
+    --card-background-dark: #f9f9f9; /* Light card background */
+    --border-color-light: #444; /* Dark border */
+    --border-color-dark: #ddd; /* Light border */
+    --gradient-light: linear-gradient(135deg, #333, #222); /* Dark gradient */
+    --gradient-dark: linear-gradient(135deg, #e0e0e0, #f0f0f0); /* Light gradient */
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color-light);
+    background-color: var(--background-color-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    scroll-behavior: smooth;
+}
+
+/* Light Mode (if system prefers light) */
+@media (prefers-color-scheme: light) {
+    body {
+        color: var(--text-color-dark);
+        background-color: var(--background-color-dark);
+    }
+    .navbar {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-bottom: 1px solid var(--border-color-dark);
+    }
+    .navbar a {
+        color: var(--text-color-dark);
+    }
+    .button.primary {
+        background: var(--primary-color);
+        color: white;
+        box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+    }
+    .button.primary:hover {
+        background: var(--primary-dark-color);
+        box-shadow: 0 6px 20px rgba(40, 167, 69, 0.6);
+    }
+    .hero-section {
+        background: var(--gradient-dark);
+    }
+    .about-section, .zaktomate-section, .contact-section {
+        background-color: var(--card-background-dark);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+    input[type="email"] {
+        background-color: #fff;
+        border: 1px solid var(--border-color-dark);
+        color: var(--text-color-dark);
+    }
+    input[type="email"]::placeholder {
+        color: #777;
+    }
+    .footer {
+        background-color: #f0f0f0;
+        border-top: 1px solid var(--border-color-dark);
+    }
+    .footer a {
+        color: var(--text-color-dark);
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-dark-color);
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0a0a0a; /* Even darker background for navbar */
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); /* Stronger shadow for depth */
+    z-index: 1000;
+    border-bottom: 1px solid rgba(40, 167, 69, 0.3); /* Subtle greenish border */
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.hamburger {
+    display: none; /* Hidden by default, shown on mobile */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-color-light);
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-links-container {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Add gap between nav links and button */
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links-container {
+        display: none; /* Hidden by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--background-color-light); /* Match navbar background */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        padding: 20px 0;
+        border-top: 1px solid rgba(40, 167, 69, 0.2);
+    }
+
+    .nav-links-container.active {
+        display: flex; /* Show when active */
+    }
+
+    .nav-links-container nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links-container nav ul li {
+        margin: 10px 0;
+    }
+
+    .nav-links-container .button.primary {
+        margin-top: 20px;
+    }
+
+    /* Hamburger animation */
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(11px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-11px) rotate(-45deg);
+    }
+}
+
+.navbar .logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin-left: 30px;
+}
+
+.navbar nav ul li a {
+    color: var(--text-color-light); /* Light text for dark background */
+    font-weight: 500;
+    font-size: 1.1em;
+    position: relative;
+}
+
+.navbar nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.navbar nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    background: var(--primary-color);
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.button.primary {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4); /* Greenish shadow */
+}
+
+.button.primary:hover {
+    background: var(--primary-dark-color);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.6); /* Darker greenish shadow */
+    transform: translateY(-2px);
+}
+
+.button.large {
+    padding: 15px 35px;
+    font-size: 1.2em;
+    border-radius: 10px;
+}
+
+.button.extra-large {
+    padding: 18px 45px;
+    font-size: 1.4em;
+    border-radius: 12px;
+    margin-top: 30px;
+}
+
+/* Sections */
+section {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-section {
+    padding-top: 180px;
+    padding-bottom: 100px;
+    background: var(--gradient-light);
+    color: var(--text-color-light);
+}
+
+.hero-section h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+.about-section, .zaktomate-section, .contact-section {
+    background-color: var(--card-background-light);
+    margin: 50px auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    padding: 80px 40px;
+    max-width: 900px;
+}
+
+.about-section h2, .zaktomate-section h2, .contact-section h2 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+}
+
+.zaktomate-section h3, .contact-section h3 {
+    font-size: 1.8em;
+    color: var(--text-color-light);
+    margin-bottom: 30px;
+}
+
+/* Contact Section Form */
+.subscribe-form {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.subscribe-form input[type="email"] {
+    padding: 12px 20px;
+    border: 1px solid var(--border-color-light);
+    border-radius: 8px;
+    font-size: 1.1em;
+    width: 300px;
+    max-width: 80%;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subscribe-form input[type="email"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+.subscribe-form .button {
+    padding: 12px 30px;
+    font-size: 1.1em;
+}
+
+/* Footer */
+.footer {
+    background-color: #111; /* Darker background for footer */
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid rgba(40, 167, 69, 0.5); /* Subtle greenish border */
+    color: var(--text-color-light);
+}
+
+.footer .logo {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.footer p {
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.footer nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer nav ul li a {
+    color: var(--text-color-light); /* Light text for dark background */
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: row; /* Ensure horizontal layout */
+        justify-content: space-between; /* Logo left, hamburger right */
+        gap: 0; /* Reset gap for horizontal alignment */
+        padding: 0 15px; /* Smaller padding for mobile navbar */
+    }
+    .navbar .logo {
+        /* No specific margin needed, handled by justify-content */
+    }
+    .hamburger {
+        display: flex;
+        /* No specific margin needed, handled by justify-content */
+    }
+
+    .nav-links-container {
+        display: none; /* Hidden by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--background-color-light); /* Match navbar background */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        padding: 20px 0;
+        border-top: 1px solid rgba(40, 167, 69, 0.2);
+    }
+
+    .nav-links-container.active {
+        display: flex; /* Show when active */
+    }
+
+    .nav-links-container nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links-container nav ul li {
+        margin: 10px 0;
+    }
+
+    .nav-links-container .button.primary {
+        margin-top: 20px;
+    }
+
+    /* Hamburger animation */
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(11px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-11px) rotate(-45deg);
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar nav ul li {
+        margin: 0 10px;
+    }
+    .hero-section h1 {
+        font-size: 2em;
+    }
+    .hero-section p {
+        font-size: 1em;
+    }
+    .button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+    .about-section h2, .zaktomate-section h2, .contact-section h2 {
+        font-size: 1.8em;
+    }
+    .zaktomate-section h3, .contact-section h3 {
+        font-size: 1.3em;
+    }
+    .footer nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
